@@ -1,0 +1,24 @@
+#searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  border: 1px solid lightblue;
+}
+
+input {
+  width: 500px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+button {
+  width: 60px;
+  height: 36px;
+  background-color: aliceblue;
+}
+
+p {
+  font-size: 30px;
+}
+

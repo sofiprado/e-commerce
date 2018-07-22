@@ -1,0 +1,50 @@
+#main-container {
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  height: 800px;
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#item-data {
+  width: 400px;
+  height: 300px;
+  text-align: center;
+  position: relative;
+  float: right;
+}
+
+
+
+.title-txt {
+  font-size: 20px;
+}
+
+.condition {
+  color: gray;
+  font-size: 13px;
+}
+
+
+.description {
+  font-size: 20px;
+  height: 200px;
+  width: 800px;
+  margin: 30px;
+  padding: 20px;
+}
+
+.condition {
+  color: gray;
+  font-size: 15px;
+}
+
+
+button {
+  width: 80px;
+  height: 36px;
+  background-color: aliceblue;
+}
