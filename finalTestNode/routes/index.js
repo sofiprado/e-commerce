@@ -8,6 +8,7 @@ const productController =  require('../controllers/productController.js')
 /* GET home page. */
 router.get('/api/items', apiController.getApi)
 
+/*GET single product. */
 router.get('/api/items/:id', productController.getProduct)
 
 

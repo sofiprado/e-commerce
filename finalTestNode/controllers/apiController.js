@@ -2,6 +2,7 @@ const apiService = require('../services/apiService')
 
 let self = {};
 
+//SELECT DATA FROM SEARCH RESULT
 self.getApi = function (req, res) {
 
   const query = req.query['q']
@@ -9,9 +10,7 @@ self.getApi = function (req, res) {
 
   apiService.productsApi(query).then(function (data) {
   
-    const products = data.results
-    //console.log(products)
-     
+    const products = data.results 
     let selectedItems = []
    
     for (var i = 0; i < products.length; i++) {  
@@ -21,7 +20,6 @@ self.getApi = function (req, res) {
           id: products[i].id,
           title: products[i].title,
         },
-        //falta category_id
         price: {
           currency: products[i].currency_id,
           amount: products[i].price,
@@ -35,7 +33,7 @@ self.getApi = function (req, res) {
           city: products[i].address.city_name,
           sold_quantity: products[i].sold_quantity,
           description: products[i].title
-        }}) 
+      }}) 
     }
     
     res.json({ 
@@ -45,10 +43,7 @@ self.getApi = function (req, res) {
     },
     myProducts: selectedItems 
   })
-    //para un array dentro de un array seria arr1[indice].arr2[indice]
-    //pero cuando hago this.state.productos[2] me salta undefined .id  
   }).catch(function (err) {
-    console.log(err);
  })
 }
 

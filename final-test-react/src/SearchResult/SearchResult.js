@@ -6,7 +6,6 @@ import './SearchResult.css';
 import SearchBox from '../SearchBox/SearchBox'
 
 class SearchResult extends Component {
-
   constructor(props) { 
     super(props)
     this.state = {
@@ -18,28 +17,26 @@ class SearchResult extends Component {
     }
   }
 
-  componentDidMount() {
-   
-    const queryParse = queryString.parse(this.props.location.search)
-    const id = queryParse.search
-    console.log(id, 1111)
-    fetch('http://localhost:3001/api/items?q='+ id).then((data) => {
-      return data.json()
-    }).then((result) => {
-      this.setState({
-        finalProducts: result,
-        searchTitle: id
-      })
+//SEARCH PRODUCT IN API
+componentDidMount() {
+  const queryParse = queryString.parse(this.props.location.search)
+  const id = queryParse.search
+  fetch('http://localhost:3001/api/items?q='+ id).then((data) => {
+    return data.json()
+  }).then((result) => {
+    this.setState({
+      finalProducts: result,
+      searchTitle: id
     })
-  }
+  })
+}
 
+//NEW SEARCH
+componentDidUpdate() {
+  const queryParse = queryString.parse(this.props.location.search)
+  const id = queryParse.search
 
-  componentDidUpdate() {
-    const queryParse = queryString.parse(this.props.location.search)
-    const id = queryParse.search
-
-    if (id !== this.state.searchTitle) {
-    //  console.log(this.state.searchTitle)
+  if (id !== this.state.searchTitle) {
     fetch('http://localhost:3001/api/items?q='+ id).then((data) => {
       return data.json()
     }).then((result) => {
@@ -49,20 +46,18 @@ class SearchResult extends Component {
       })
     })
   }
-  }
+}
 
 
-  render() {
-   
-    return(
-      <div>
-        <SearchBox />  
-      <div>
-      {this.state.finalProducts &&
-        <React.Fragment>
-          {this.state.finalProducts.myProducts.map((producto, i) => {
-            const url = '/items/' + producto.items.id
-    //console.log(url, 'es la url')
+render() { 
+  return(
+    <div>
+      <SearchBox />  
+    <div>
+    {this.state.finalProducts &&
+      <React.Fragment>
+        {this.state.finalProducts.myProducts.map((producto, i) => {
+          const url = '/items/' + producto.items.id
             return(
               <div className="results-container" key={i}>
               <Link to={url}>

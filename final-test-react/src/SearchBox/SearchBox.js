@@ -5,7 +5,6 @@ import './SearchBox.css';
 class SearchBox extends Component {
   constructor(props) {
     super(props)
-    // console.log(props)
     this.state = {
       item: ''
     }
@@ -13,16 +12,14 @@ class SearchBox extends Component {
 
   handleChange(e) {
     const value = e.target.value
-
     this.setState({
       item: value
     })
   }
 
-  //get api results
+  //SEARCH BUTTON
   handleClick() {
     const inputValue = this.state.item
-
     this.setState({
       item: inputValue
     })

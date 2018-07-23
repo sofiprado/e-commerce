@@ -1,23 +1,18 @@
 #main-container {
   font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-  height: 800px;
-  width: 1000px;
+  height: 900px;
+  width: 900px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-
 }
 
 #item-data {
   width: 400px;
   height: 300px;
-  text-align: center;
-  position: relative;
-  float: right;
 }
-
-
 
 .title-txt {
   font-size: 20px;
@@ -28,13 +23,11 @@
   font-size: 13px;
 }
 
-
 .description {
   font-size: 20px;
   height: 200px;
   width: 800px;
-  margin: 30px;
-  padding: 20px;
+  text-align: left;
 }
 
 .condition {
@@ -42,6 +35,9 @@
   font-size: 15px;
 }
 
+img {
+  margin: 70px;
+}
 
 button {
   width: 80px;

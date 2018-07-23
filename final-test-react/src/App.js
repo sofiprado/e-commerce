@@ -13,7 +13,6 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path="/api" component={Api} />
-
           <Route exact path="/" component={SearchBox} />
           <Route exact path="/items/:id" component={Product} />
           <Route exact path="/items" component={SearchResult} />
