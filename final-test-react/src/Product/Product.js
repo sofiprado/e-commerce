@@ -22,11 +22,9 @@ class Product extends Component {
     fetch('http://localhost:3001/api/items/' + id).then((data) => {
       return data.json()
     }).then((result) => {
-     console.log( 'RESULT ES', result)
   
-
-      this.setState({
-        producto: result
+     this.setState({
+       producto: result
       })
     })
   }
@@ -34,6 +32,7 @@ class Product extends Component {
   render() {
     return (
       <div id="main-container">
+        <SearchBox />  
         {this.state.producto.item && 
         <div>
           <img className='image' src={this.state.producto.item.image} />
