@@ -36,7 +36,7 @@ class Product extends Component {
         {this.state.producto.item && 
         <div>
           <img className='image' src={this.state.producto.item.image} />
-          <p className='condition'>{this.state.producto.item.condition} - {this.state.producto.quantity} vendidos</p>
+          <p className='condition'>{this.state.producto.item.condition} - {this.state.producto.item.quantity} vendidos</p>
           <p className='title-txt'>{this.state.producto.item.title}</p>
           <p className='price-txt'>$ {this.state.producto.item.price}</p>
           <button>Comprar</button>
