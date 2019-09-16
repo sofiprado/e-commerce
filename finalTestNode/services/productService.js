@@ -15,7 +15,7 @@ self.productDetails = function(product) {
 return getDetail
 }
 
-//GET DESCRIPTION
+//GET PRODUCT DESCRIPTION
 self.productDescript = function(product) { 
   
   const getDescript =  new Promise(function(resolve, reject) {
